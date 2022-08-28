@@ -1,5 +1,5 @@
-﻿using System;
-using NHibernate.Proxy;
+﻿using NHibernate.Proxy;
+using System;
 
 namespace Logic.Students
 {

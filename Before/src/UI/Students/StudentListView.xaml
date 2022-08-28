@@ -36,6 +36,10 @@
                                         <Label Content="Credits:" Visibility="{Binding Path=Course1, Converter={StaticResource invertedEmptyStringToBoolConverter}, Mode=OneWay}" />
                                         <Label Content="{Binding Path=Course1Credits}" />
                                     </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Content="Disenroll" Margin="10 0 10 15" Padding="5" FontSize="18" />
+                                    </StackPanel>
+                                        
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

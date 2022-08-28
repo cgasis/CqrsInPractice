@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Logic.Utils;
+using System.Collections.Generic;
 using System.Linq;
-using Logic.Utils;
 
 namespace Logic.Students
 {
