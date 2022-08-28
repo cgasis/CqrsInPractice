@@ -25,10 +25,12 @@ namespace Api
 
             services.AddSingleton(new SessionFactory(Configuration["ConnectionString"]));
             services.AddTransient<UnitOfWork>();
+            services.AddTransient<ICommandHandler<RegisterCommand>, RegisterCommandHandler>();
             services.AddTransient<ICommandHandler<EditPersonalInfoCommand>, EditPersonalInfoCommandHandler>();
+            services.AddTransient<ICommandHandler<DisenrollCommand>, DisenrollCommandHandler>();
+            services.AddTransient<ICommandHandler<TransferCommand>, TransferCommandHandler>();
             services.AddTransient<IQueryHandler<ListStudentsQuery, List<StudentDto>>, ListStudentQueryHandler>();
             services.AddSingleton<Messages>();
-            //services.AddScoped<ICommand, EditPersonalInfoCommand>();
             services.AddSwaggerGen();
 
         }
@@ -38,7 +40,8 @@ namespace Api
             app.UseMiddleware<ExceptionHandler>();
             app.UseMvc();
             app.UseSwagger();
-            app.UseSwaggerUI(c => {
+            app.UseSwaggerUI(c =>
+            {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V2");
             });
         }
